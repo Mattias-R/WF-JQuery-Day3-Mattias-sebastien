@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">#
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	
+	<ul>
+		<li>Task1</li>
+		<li>Task2</li>
+		<li>Task3</li>
+		<li>Task4</li>
+		<li>Task5</li>
+	</ul>
+	<style>
+		li{
+			list-style: none;
+			background-color: green;
+			margin: 1em;
+			width: 30%;
+			font-size: 1.5em;
+			color: white;
+			padding-left: 1em;
+		}
+	</style>
+	<script>
+		
+	$("document").ready(function(){
+		$("li").on("click",function(){
+			$(this).animate({
+				opacity: 0,
+				marginLeft: "+=150"
+		}, 800, function() {
+			$(this).next().animate({
+				marginTop: "-2em"
+				}, 1000, function(){
+					$(this).css("margin-top","0em");
+				$(this).prev().remove();
+				});
+			
+		})
+		});
+	})
+	</script>
+</body>
+</html>
